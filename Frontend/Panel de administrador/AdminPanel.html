@@ -1,10 +1,189 @@
-<!DOCTYPE html>
-<html lang="en">
+! --- CSS DEL PANEL DE ADMINISTRADOR (INICIO) ---
+
+!--- CONFIGURACION ---
+<html lang="es"> <!--- Idioma en español --->
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8"> <!--- Permitir acentos y ñ) --->
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Adaptacion a pantallas de celular -->
+<!-- Título que aparece en la pestaña del navegador -->
+<title>Panel de administrador · Cursos de Verano</title>
+
+<!--- Font --->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--- Archivo de estilo --->
+<link rel="stylesheet" href="AdminPanel.css">
 </head>
 <body>
+
+<!--- BARRA DE ARRIBA FIJA --->
+<header class="topbar">
+  <div class="logo" aria-hidden="true"></div> <!--- Logo --->
+  <span class="crumb">Panel de administrador · Cursos Verano · Invierno</span>
+  <span class="spacer"></span>
+  <span class="campus">Campus Estado de México</span>
+  <div class="avatar" aria-label="Administrador">AD</div> <!--- Perfil del administrador --->
+</header>
+
+<!--- MENÚ LATERAL (izquierda) --->
+<nav class="sidebar" aria-label="Menú principal">
+  M<a href="#" class="active">Panel principal</a> <!--- Marca la sección donde estás --->
+  <a href="#">Participantes</a>
+  <a href="#">Cursos</a>
+  <a href="#">Calendario</a>
+  <a href="#">Alertas médicas</a>
+  <a href="#">Reportes</a>
+  <a href="#">Exportar</a>
+</nav>
+
+<!--- CONTENIDO PRINCIPAL --->
+<main class="main">
+
+  <!-- Encabezado: título a la izquierda, botones a la derecha -->
+  <div class="head">
+    <div>
+      <h1>Registro de participantes</h1>
+      <p>Curso de Verano 2026 · Vista general</p>
+    </div>
+    <div class="actions">
+      <button class="btn">Exportar</button>
+      <button class="btn primary">Nuevo registro</button>
+    </div>
+  </div>
+
+  <!--- TARJETAS --->
+  <section class="stats" aria-label="Resumen">
+
+    <!-- Tarjeta 1: total de participantes -->
+    <div class="card stat">
+      <div class="chip c-blue"></div> 
+      <div class="label">Total participantes</div> 
+      <div class="value">0</div> 
+      <div class="note up">▲ 0 esta semana</div> 
+    </div>
+
+    <!--- Tarjeta 2: cursos activos --->
+    <div class="card stat">
+      <div class="chip c-green"></div>
+      <div class="label">Cursos activos</div>
+      <div class="value">0</div>
+      <div class="note">Verano 2026</div>
+    </div>
+
+    <!--- Tarjeta 3: alertas médicas --->
+    <div class="card stat alert">
+      <div class="chip c-red"></div>
+      <div class="label">Alertas médicas</div>
+      <div class="value">0</div>
+      <div class="note">Alergias / condiciones</div>
+    </div>
+
+    <!--- Tarjeta 4: satisfacción =-->
+    <div class="card stat">
+      <div class="chip c-amber"></div>
+      <div class="label">Satisfacción esperada</div>
+      <!-- <small> hace más pequeño el "/ 5" -->
+      <div class="value">0 <small>/ 5</small></div>
+      <div class="note">Promedio de 0 votos</div>
+    </div>
+  </section>
+
+  <!--- FILTROS Y BUSCADOR --->
+  <section class="card filters" aria-label="Filtros">
+    <!-- Caja de búsqueda -->
+    <input type="search" placeholder="Buscar participante o tutor…" aria-label="Buscar participante o tutor">
+
+    <!--- MENU CURSO --->
+    <select aria-label="Curso">
+      <option>Todos los cursos</option>
+      <option>Manitas Creativas</option>
+      <option>Pequeños Héroes</option>
+    </select>
+
+    <!--- MENU PERIODO --->
+    <select aria-label="Periodo">
+      <option>Periodo: Verano</option>
+      <option>Periodo: Invierno</option>
+    </select>
+
+    <!--- MeNU: AÑO --->
+    <select aria-label="Año">
+      <option>Año 2026</option>
+      <option>Año 2025</option>
+    </select>
+  </section>
+
+  <!--- ZONA DE DOS COLUMNAS: TABLA Y BARRAS--->
+  <div class="grid">
+
+    <!--- COLUMNA IZQUIERDA: TABLA DE PARTICIPANTES --->
+    <section class="card table-card">
+      <div class="card-head">
+        <h2>Participantes registrados</h2>
+        <!--- Contador de filas mostradas --->
+        <span>Mostrando 1 de 1</span>
+      </div>
+
+      <!--- Contenedor pantallas mini --->
+      <div class="table-wrap">
+        <table>
+          <!--- Fila de títulos de columna --->
+          <thead>
+            <tr>
+              <th>Participante</th>
+              <th>Edad</th>
+              <th>Curso</th>
+              <th>Tutor</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+
+          <!--- Filas de datos: participantes --->
+          <tbody>
+            <tr>
+              <td>Sofía Ramírez</td>
+              <td>9</td>
+              <td class="course">Manitas Creativas</td>
+              <td class="tutor">Ana Ramírez (Madre)</td>
+              <td><span class="badge ok">Aprobado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!--- COLUMNA INSCRIPCIONES POR CURSO --->
+    <aside class="card bars">
+      <h2>Inscripciones por curso</h2>
+
+      <div class="bar-row">
+        <div class="top"><span>Manitas Creativas</span><b>0</b></div>
+        <div class="track"><div class="fill" style="width:0%;background:var(--navy)"></div></div>
+      </div>
+
+      <div class="bar-row">
+        <div class="top"><span>Pequeños Héroes</span><b>0</b></div>
+        <div class="track"><div class="fill" style="width:0%;background:var(--blue)"></div></div>
+      </div>
+
+      <div class="bar-row">
+        <div class="top"><span>TTF — Porras</span><b>0</b></div>
+        <div class="track"><div class="fill" style="width:0%;background:var(--teal)"></div></div>
+      </div>
+
+      <div class="bar-row">
+        <div class="top"><span>TTF — Tocho</span><b>0</b></div>
+        <div class="track"><div class="fill" style="width:0%;background:var(--teal)"></div></div>
+      </div>
+
+      <div class="bar-row">
+        <div class="top"><span>VeranoExploraTec</span><b>0</b></div>
+        <div class="track"><div class="fill" style="width:0%;background:var(--navy)"></div></div>
+      </div>
+    </aside>
+  </div>
+</main>
 
 </body>
 </html>

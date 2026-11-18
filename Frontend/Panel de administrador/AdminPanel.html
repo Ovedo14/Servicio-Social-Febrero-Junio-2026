@@ -1,6 +1,7 @@
-! --- HTML DEL PANEL DE ADMINISTRADOR (INICIO) ---
+<!DOCTYPE html>
+<!-- HTML DEL PANEL DE ADMINISTRADOR (INICIO) -->
 
-!--- CONFIGURACION ---
+<!-- CONFIGURACION -->
 <html lang="es"> <!--- Idioma en español --->
 <head>
 <meta charset="UTF-8"> <!--- Permitir acentos y ñ) --->
@@ -28,13 +29,13 @@
 
 <!--- MENÚ LATERAL (izquierda) --->
 <nav class="sidebar" aria-label="Menú principal">
-  M<a href="#" class="active">Panel principal</a> <!--- Marca la sección donde estás --->
+  <a href="#" class="active">Panel principal</a> <!--- Marca la sección donde estás --->
   <a href="#">Participantes</a>
   <a href="#">Cursos</a>
   <a href="#">Calendario</a>
   <a href="#">Alertas médicas</a>
   <a href="#">Reportes</a>
-  <a href="#">Exportar</a>
+  <a href="#" data-exportar="general">Exportar</a>
 </nav>
 
 <!--- CONTENIDO PRINCIPAL --->
@@ -47,7 +48,7 @@
       <p>Curso de Verano 2026 · Vista general</p>
     </div>
     <div class="actions">
-      <button class="btn">Exportar</button>
+      <button class="btn" data-exportar="general">Exportar</button>
       <button class="btn primary">Nuevo registro</button>
     </div>
   </div>
@@ -95,22 +96,25 @@
     <input type="search" placeholder="Buscar participante o tutor…" aria-label="Buscar participante o tutor">
 
     <!--- MENU CURSO --->
-    <select aria-label="Curso">
-      <option>Todos los cursos</option>
-      <option>Manitas Creativas</option>
-      <option>Pequeños Héroes</option>
+    <select id="filtro-curso" aria-label="Curso">
+      <option value="">Todos los cursos</option>
+      <option value="Manitas Creativas">Manitas Creativas</option>
+      <option value="Pequeños Héroes">Pequeños Héroes</option>
+      <option value="TTF — Porras">TTF — Porras</option>
+      <option value="TTF — Tocho">TTF — Tocho</option>
+      <option value="VeranoExploraTec">VeranoExploraTec</option>
     </select>
 
     <!--- MENU PERIODO --->
-    <select aria-label="Periodo">
-      <option>Periodo: Verano</option>
-      <option>Periodo: Invierno</option>
+    <select id="filtro-periodo" aria-label="Periodo">
+      <option value="Verano">Periodo: Verano</option>
+      <option value="Invierno">Periodo: Invierno</option>
     </select>
 
     <!--- MeNU: AÑO --->
-    <select aria-label="Año">
-      <option>Año 2026</option>
-      <option>Año 2025</option>
+    <select id="filtro-anio" aria-label="Año">
+      <option value="2026">Año 2026</option>
+      <option value="2025">Año 2025</option>
     </select>
   </section>
 
@@ -136,6 +140,7 @@
               <th>Curso</th>
               <th>Tutor</th>
               <th>Estado</th>
+              <th>Expediente</th>
             </tr>
           </thead>
 
@@ -147,6 +152,7 @@
               <td class="course">Manitas Creativas</td>
               <td class="tutor">Ana Ramírez (Madre)</td>
               <td><span class="badge ok">Aprobado</span></td>
+              <td><button class="btn" data-exportar="persona" data-id="p-001">Descargar</button></td>
             </tr>
           </tbody>
         </table>
@@ -184,6 +190,10 @@
     </aside>
   </div>
 </main>
+
+<!--- DESCARGA DE EXPEDIENTES EN PDF (ver Backend/exportar/LEEME.md) --->
+<script src="../../Backend/exportar/vendor/jspdf-4.2.1.umd.min.js"></script>
+<script type="module" src="../../Backend/exportar/panelExport.js"></script>
 
 </body>
 </html>

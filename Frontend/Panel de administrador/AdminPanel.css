@@ -229,7 +229,7 @@ td.tutor{color:var(--muted)}
 
 /* Celulares */
 @media (max-width:760px){
-  .sidebar{                                     /
+  .sidebar{
     position:static;
     width:auto;
     flex-direction:row;

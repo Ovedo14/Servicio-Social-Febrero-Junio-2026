@@ -1,0 +1,700 @@
+
+/* ========================================
+   PALETA DE COLORES INSTITUCIONALES
+======================================== */
+
+:root {
+    --azul: #0033A0;
+    --turquesa: #2A9D8F;
+    --oscuro: #161A4A;
+    --claro: #E6F1FB;
+    --secundario: #2A589D;
+    --gris: #B0BDB9;
+    --blanco: #FFFFFF;
+    --fondo: #F5F8FC;
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--oscuro);
+    background: var(--fondo);
+    line-height: 1.55;
+}
+
+/* ========================================
+   BARRA LATERAL
+======================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    background: var(--azul);
+    color: var(--blanco);
+    padding: 32px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.brand {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    line-height: 1.1;
+}
+
+.brand small {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.programa {
+    font-size: 21px;
+    font-weight: 800;
+    border-top: 1px solid #FFFFFF55;
+    padding-top: 24px;
+}
+
+.nav {
+    color: var(--blanco);
+    background: #FFFFFF20;
+    border-radius: 8px;
+    padding: 12px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.nav:hover {
+    background: #FFFFFF35;
+}
+
+.lema {
+    margin-top: auto;
+    font-size: 14px;
+    color: var(--claro);
+}
+
+/* ========================================
+   ENCABEZADO PRINCIPAL
+======================================== */
+
+main {
+    margin-left: 240px;
+}
+
+header {
+    background: var(--blanco);
+    padding: 25px 36px;
+    border-bottom: 1px solid #DCE4ED;
+}
+
+header span,
+.etapa {
+    font-size: 12px;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+    color: var(--secundario);
+}
+
+h1 {
+    font-size: clamp(24px, 3vw, 34px);
+    margin: 4px 0;
+    color: var(--oscuro);
+}
+
+h2 {
+    margin: 5px 0 20px;
+    color: var(--azul);
+    font-size: 24px;
+}
+
+/* ========================================
+   DISTRIBUCIÓN DEL FORMULARIO
+======================================== */
+
+.layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 24px;
+    padding: 28px;
+    max-width: 1450px;
+    margin: auto;
+}
+
+/* MENÚ DE ETAPAS */
+
+nav {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    display: grid;
+    gap: 16px;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--oscuro);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: var(--claro);
+}
+
+nav b {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 34px;
+    height: 34px;
+    background: var(--azul);
+    color: var(--blanco);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* ========================================
+   TARJETAS DEL FORMULARIO
+======================================== */
+
+.panel {
+    background: var(--blanco);
+    border: 1px solid #DCE4ED;
+    border-radius: 14px;
+    padding: clamp(18px, 3vw, 32px);
+    margin-bottom: 24px;
+    scroll-margin-top: 20px;
+    box-shadow: 0 4px 16px #161A4A08;
+}
+
+.panel:target {
+    border-color: var(--secundario);
+}
+
+.panel p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   CAMPOS DE TEXTO
+======================================== */
+
+label,
+legend {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+label:not(.opcion) {
+    display: block;
+    margin: 16px 0 7px;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+textarea {
+    width: 100%;
+    font: inherit;
+    padding: 12px;
+    border: 1px solid #A9BACD;
+    border-radius: 7px;
+    background: #F9FBFD;
+    color: var(--oscuro);
+    transition: border-color 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #8290A3;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--turquesa);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   OPCIONES Y CASILLAS
+======================================== */
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 22px 0;
+    min-width: 0;
+}
+
+legend {
+    margin-bottom: 10px;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(175px, 1fr)
+    );
+    gap: 10px;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px;
+    border: 1px solid #DCE4ED;
+    border-radius: 8px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.opcion:hover {
+    background: var(--claro);
+}
+
+.opcion:has(input:checked) {
+    background: var(--claro);
+    border-color: var(--azul);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--azul);
+    width: 17px;
+    height: 17px;
+    flex: none;
+    cursor: pointer;
+}
+
+.columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.acciones {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    border-top: 1px solid #E1E8F0;
+    padding-top: 20px;
+}
+
+.boton {
+    display: inline-block;
+    background: var(--azul);
+    color: var(--blanco);
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.boton:hover {
+    background: var(--secundario);
+}
+
+.anterior {
+    color: var(--azul);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.anterior:hover {
+    text-decoration: underline;
+}
+
+.obligatorio {
+    color: #A52A36;
+    font-size: 13px;
+}
+
+/* ========================================
+   EVALUACIÓN CON ESTRELLAS
+======================================== */
+
+.estrellas {
+    display: flex;
+    gap: clamp(8px, 3vw, 24px);
+    flex-wrap: wrap;
+}
+
+.estrellas label {
+    display: grid;
+    justify-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.estrella {
+    font-size: 34px;
+    color: var(--gris);
+    transition: color 0.2s;
+}
+
+.estrellas label:hover .estrella {
+    color: var(--secundario);
+}
+
+.estrellas label:has(input:checked) .estrella {
+    color: var(--azul);
+}
+
+/* ========================================
+   CONFIRMACIÓN DEL REGISTRO
+======================================== */
+
+.confirmacion {
+    border-top: 4px solid var(--turquesa);
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.icono-confirmacion {
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    margin: 25px auto;
+    background: #E3F4F1;
+    color: var(--turquesa);
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.confirmacion strong {
+    color: var(--azul);
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE PARA TABLETAS
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    main {
+        margin-left: 190px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE PARA CELULARES
+======================================== */
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .programa {
+        padding-top: 12px;
+    }
+
+    .lema {
+        display: none;
+    }
+
+    main {
+        margin: 0;
+    }
+
+    header,
+    .layout {
+        padding: 16px;
+    }
+
+    .columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .acciones {
+        flex-wrap: wrap;
+    }
+
+    .opciones {
+        grid-template-columns: 1fr;
+    }
+
+    .confirmacion {
+        padding: 25px 18px;
+    }
+}
+/* ========================================
+   AJUSTES DE COLORES INSTITUCIONALES
+======================================== */
+
+:root {
+    --azul: #0033A0;
+    --turquesa: #2A9D8F;
+    --oscuro: #161A4A;
+    --claro: #E6F1FB;
+    --secundario: #2A589D;
+    --gris: #B0BDB9;
+    --blanco: #FFFFFF;
+    --fondo: #E6F1FB;
+}
+
+/* Fondo general */
+
+body {
+    background-color: var(--claro);
+    color: var(--oscuro);
+}
+
+/* Barra lateral */
+
+.sidebar {
+    background: var(--azul);
+    color: var(--blanco);
+}
+
+/* Encabezados */
+
+h1 {
+    color: var(--oscuro);
+}
+
+h2 {
+    color: var(--azul);
+}
+
+h3 {
+    color: var(--secundario);
+}
+
+/* Tarjetas del formulario */
+
+.form-section,
+.form-card,
+.welcome-card {
+    background-color: var(--blanco);
+    border: 1px solid var(--secundario);
+    border-top: 5px solid var(--azul);
+    box-shadow: 0 5px 18px rgba(22, 26, 74, 0.08);
+}
+
+/* Numeración de los pasos */
+
+.step-number {
+    background-color: var(--secundario);
+    color: var(--blanco);
+}
+
+.step.active .step-number,
+.step:hover .step-number {
+    background-color: var(--turquesa);
+}
+
+/* Campos de respuesta */
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    background-color: #FFFFFF;
+    border: 1.5px solid var(--gris);
+    color: var(--oscuro);
+    border-radius: 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--turquesa);
+    outline-offset: 2px;
+    border-color: var(--turquesa);
+}
+
+/* Opciones de selección */
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--azul);
+}
+
+/* Botones principales */
+
+.btn-primary,
+.btn-next,
+.btn-submit,
+button[type="submit"] {
+    background-color: var(--turquesa);
+    color: var(--oscuro);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-next:hover,
+.btn-submit:hover,
+button[type="submit"]:hover {
+    background-color: var(--oscuro);
+    color: var(--blanco);
+}
+
+/* Botones secundarios */
+
+.btn-secondary,
+.btn-back {
+    color: var(--secundario);
+}
+
+/* Confirmación del registro */
+
+.confirmation-card,
+.confirmation {
+    background-color: var(--blanco);
+    border-top: 5px solid var(--turquesa);
+}
+
+.success-icon {
+    background-color: var(--claro);
+    color: var(--turquesa);
+}
+
+/* Estrellas de satisfacción */
+
+.stars,
+.rating {
+    color: var(--gris);
+}
+
+.stars label:hover,
+.rating label:hover {
+    color: var(--turquesa);
+}
+
+/* Líneas divisorias */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--gris);
+}
+
+/* Selección de texto */
+
+::selection {
+    background-color: var(--claro);
+    color: var(--azul);
+}
+/* AJUSTES FINALES DE DISEÑO */
+
+/* Botones de navegación */
+a[href="#tutor"],
+a[href="#participante"],
+a[href="#curso"],
+a[href="#informacion"],
+a[href="#confirmacion"] {
+    transition: background-color 0.2s ease;
+}
+
+/* Botones principales */
+a[class*="btn"]:not([class*="back"]):not([class*="secondary"]),
+.btn-primary,
+.btn-next,
+.btn-submit,
+button[type="submit"] {
+    background: #2A9D8F !important;
+    color: #161A4A !important;
+    border: none;
+}
+
+/* Efecto al pasar el cursor */
+a[class*="btn"]:not([class*="back"]):not([class*="secondary"]):hover,
+.btn-primary:hover,
+.btn-next:hover,
+.btn-submit:hover {
+    background: #161A4A !important;
+    color: #FFFFFF !important;
+}
+
+/* Títulos de las secciones */
+h2 {
+    color: #161A4A;
+    border-bottom: 3px solid #2A9D8F;
+    padding-bottom: 12px;
+}
+
+/* Tarjetas */
+.form-card,
+.form-section,
+.welcome-card {
+    border-top: 4px solid #2A589D;
+}
+
+/* Numeración */
+.step-number {
+    background: #2A589D !important;
+}
+
+/* Fondo */
+body {
+    background: #E6F1FB;
+}

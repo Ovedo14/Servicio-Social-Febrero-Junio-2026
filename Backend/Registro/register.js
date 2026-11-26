@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * TEC MED | Solicitud de alta de administradores
  * Autora del modulo: Jimena Olvera
@@ -66,3 +67,6 @@ export async function solicitarRegistroAdministrador(datos, servicioRegistro) {
     );
   }
 }
+=======
+import { app, analytics } from "../firebase/firebase.js";
+>>>>>>> origin/main

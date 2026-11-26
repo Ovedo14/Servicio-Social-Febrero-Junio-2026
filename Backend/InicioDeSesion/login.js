@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * TEC MED | Inicio de sesion de administradores
  * Autora del modulo: Jimena Olvera
@@ -91,6 +90,3 @@ export async function cerrarSesion(servicioAuth) {
 
   await servicioAuth.cerrarSesion();
 }
-=======
-import { app, analytics } from "../firebase/firebase.js";
->>>>>>> origin/main
